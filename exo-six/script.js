@@ -19,12 +19,12 @@ class ExoSixCanvApp extends CanvApp {
         this.image.addEventListener( "load", () => {
             context.drawImage( this.image, 0, 0, width, height );
             this.updateCopy();
-            this.canvas.addEventListener( "mousemove", this.handleMouseOver.bind( this ) );
+            this.canvas.addEventListener( "mousemove", this.handleMouseMove.bind( this ) );
         } );
         this.image.src = "../_shared/big-kitten.jpg";
     }
 
-    handleMouseOver( { clientX, clientY } ) {
+    handleMouseMove( { clientX, clientY } ) {
         let { width, height, copyWidth, copyHeight } = this,
             { top, left } = this.canvas.getBoundingClientRect(),
             x, y;
